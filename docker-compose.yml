@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    node:
+        image: node:16-alpine
+        container_name: node
+        networks:
+            - desafio-fc-docker
+        volumes: 
+            - ./app:/app
+        tty: true
+        ports:
+            - "3000:3000"
+
+networks: 
+    desafio-fc-docker:
+        driver: bridge 
